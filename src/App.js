@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AddPlatformForm from "./components/AppPlatformForm";
+import RechargeForm from "./components/RechargeForm";
+import PlatformCard from "./components/PlatformCard";
+import "./App.css"
 
-function App() {
+export default function App() {
+  const [platforms, setPlatforms] = useState([]);
+
+  const addPlatform = (platform) => {
+    setPlatforms((prev) => [...prev, { ...platform, recharges: [] }]);
+  };
+
+  const addRecharge = (platformName, recharge) => {
+    setPlatforms((prev) =>
+      prev.map((p) =>
+        p.name === platformName
+          ? { ...p, recharges: [...p.recharges, recharge] }
+          : p
+      )
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Budget Tracker</h1>
+      
+      <div className="forms-wrapper">
+        <AddPlatformForm onAdd={addPlatform} />
+        <RechargeForm platforms={platforms} onRecharge={addRecharge} />
+      </div>
+
+      <div className="platforms">
+        {platforms.map((platform, idx) => (
+          <PlatformCard key={idx} platform={platform} />
+        ))}
+      </div>
     </div>
   );
 }
 
-export default App;

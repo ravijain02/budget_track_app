@@ -1,38 +1,242 @@
-.App {
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h1 {
   text-align: center;
+  color: #ffcc00;
+  margin-bottom: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  text-align: center;
+  color: #ffcc00d4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.forms-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #e3ef00;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+}
+
+.platforms .card {
+  width: 100%;
+  max-width: 320px;
+}
+
+.card h2, .card h3 {
+  margin-top: 0;
+  color: #e3ef00;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+.add-platform-form {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.add-platform-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #d4ff00;
+}
+
+.form-row-labels,
+.form-row-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.form-row-labels label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  text-align: left;
+}
+
+.form-row-inputs input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline-color: #007bff;
+}
+
+.add-platform-form button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-platform-form button:hover { 
+  background-color: #007bffe3;
+}
+
+.platform-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 280px;
+  font-family: Arial, sans-serif;
+}
+
+.platform-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+.platform-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.platform-card h4 {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #444;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.platform-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.platform-card li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.recharge-form {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  margin: 12px auto;
+}
+
+.recharge-form h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #d4ff00;
+}
+
+.recharge-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #e3ef00;
+}
+
+.recharge-form input,
+.recharge-form select {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+.recharge-form button {
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.recharge-form button:hover {
+  background-color: #218838;
+}
+
+/* Optional responsive tweak */
+@media (max-width: 768px) {
+  .form-row-labels,
+  .form-row-inputs {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  .form-row-labels,
+  .form-row-inputs {
+    grid-template-columns: 1fr;
   }
 }
