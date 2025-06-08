@@ -22,7 +22,6 @@ export default function RechargeForm({ platforms, onRecharge }) {
         <select
           value={selectedPlatform}
           onChange={(e) => setSelectedPlatform(e.target.value)}
-          placeholder="Enter Amount"
           required
         >
           <option value="">Select Platform</option>

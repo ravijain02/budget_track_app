@@ -63,6 +63,7 @@ export default function AddPlatformForm({ onAdd }) {
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
           min="0"
+          placeholder="Enter Amount"
           required
         />
       </div>

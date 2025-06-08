@@ -12,15 +12,15 @@ export default function PlatformCard({ platform }) {
   return (
     <div className="platform-card">
       <h3>{platform.name}</h3>
-      <p><strong>Monthly Budget:</strong> ₹{platform.budget}</p>
-      <p><strong>Total Spent:</strong> ₹{totalSpent}</p>
+      <p><strong>Monthly Budget:</strong> Rs. {platform.budget}</p>
+      <p><strong>Total Spent:</strong> Rs. {totalSpent}</p>
       <p><strong>Date:</strong>{date}</p>
-      <p><strong>Remaining:</strong> ₹{remaining}</p>
+      <p><strong>Remaining:</strong> Rs. {remaining}</p>
 
       {initialRecharge && (
         <>
           <h4>Initial Recharge</h4>
-          <p><strong>Amount:</strong> ₹{initialRecharge.amount}</p>
+          <p><strong>Amount:</strong> Rs. {initialRecharge.amount}</p>
           <p><strong>Date:</strong> {initialRecharge.date}</p>
         </>
       )}
@@ -31,7 +31,7 @@ export default function PlatformCard({ platform }) {
           <ul>
             {additionalRecharges.map((r, idx) => (
               <li key={idx}>
-                {r.date} — ₹{r.amount}
+                {r.date} — Rs. {r.amount}
               </li>
             ))}
           </ul>
