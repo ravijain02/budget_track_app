@@ -40,6 +40,7 @@ export default function RechargeForm({ platforms, onRecharge }) {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           required
+          placeholder="Enter Amount"
         />
       </label>
 

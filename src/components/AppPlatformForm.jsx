@@ -75,6 +75,7 @@ export default function AddPlatformForm({ onAdd }) {
           value={rechargeAmount}
           onChange={(e) => setRechargeAmount(e.target.value)}
           min="0"
+          placeholder="Enter Amount"
           required
         />
         <input
