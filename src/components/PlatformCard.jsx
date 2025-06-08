@@ -1,10 +1,7 @@
 export default function PlatformCard({ platform }) {
-    console.log(platform, "kk")
   const recharges = platform.recharges || [];
-
-  const initialRecharge = recharges.length > 0 ? recharges[0] : null;
-  const additionalRecharges = recharges.slice(1);
-  const date = platform.createdAt
+  const additionalRecharges = recharges
+  const date = platform.createdAt;
 
   const totalSpent = recharges.reduce((sum, r) => sum + r.amount, 0);
   const remaining = platform.budget - totalSpent;
@@ -12,26 +9,28 @@ export default function PlatformCard({ platform }) {
   return (
     <div className="platform-card">
       <h3>{platform.name}</h3>
+      <p><strong>Created At:</strong> {date}</p>
       <p><strong>Monthly Budget:</strong> Rs. {platform.budget}</p>
       <p><strong>Total Spent:</strong> Rs. {totalSpent}</p>
-      <p><strong>Date:</strong>{date}</p>
       <p><strong>Remaining:</strong> Rs. {remaining}</p>
-
-      {initialRecharge && (
-        <>
-          <h4>Initial Recharge</h4>
-          <p><strong>Amount:</strong> Rs. {initialRecharge.amount}</p>
-          <p><strong>Date:</strong> {initialRecharge.date}</p>
-        </>
-      )}
 
       {additionalRecharges.length > 0 && (
         <>
-          <h4>Additional Recharges:</h4>
+          <h4>Recharge History</h4>
           <ul>
             {additionalRecharges.map((r, idx) => (
-              <li key={idx}>
-                {r.date} — Rs. {r.amount}
+              <li
+                key={idx}
+                style={{
+                  backgroundColor: "#f0f9ff",
+                  border: "1px solid #b6e0fe",
+                  padding: "8px",
+                  marginBottom: "6px",
+                  borderRadius: "4px"
+                }}
+              >
+                <strong>Date:</strong> {r.date} &nbsp;&nbsp;
+                <strong>Amount:</strong> Rs. {r.amount}
               </li>
             ))}
           </ul>

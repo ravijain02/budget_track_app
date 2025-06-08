@@ -7,7 +7,20 @@ export default function RechargeForm({ platforms, onRecharge }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!selectedPlatform || !amount || !date) return alert("Fill all fields");
+
+    const platform = platforms.find(p => p.name === selectedPlatform);
+    const totalSpent = platform.recharges.reduce((sum, r) => sum + r.amount, 0);
+    const newTotal = totalSpent + Number(amount);
+
+    if (!selectedPlatform || !amount || !date) {
+      alert("Fill all fields");
+      return;
+    }
+
+    if (newTotal > platform.budget) {
+      alert("Recharge exceeds the monthly budget");
+      return;
+    }
 
     onRecharge(selectedPlatform, { amount: Number(amount), date });
     setAmount("");
