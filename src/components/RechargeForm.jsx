@@ -34,7 +34,7 @@ export default function RechargeForm({ platforms, onRecharge }) {
       </label>
 
       <label>
-        Recharge Amount (₹):
+        Recharge Amount:
         <input
           type="number"
           value={amount}

@@ -49,7 +49,7 @@ export default function AddPlatformForm({ onAdd }) {
 
       <div className="form-row-inputs">
         <label>Platform Name:</label>
-        <label>Monthly Budget (₹):</label>
+        <label>Monthly Budget:</label>
         <select value={name} onChange={(e) => setName(e.target.value)} required>
           {platforms.map((platform, idx) => (
             <option key={idx} value={platform}>
@@ -68,7 +68,7 @@ export default function AddPlatformForm({ onAdd }) {
       </div>
 
       <div className="form-row-inputs">
-        <label>Initial Recharge Amount (₹):</label>
+        <label>Initial Recharge Amount:</label>
         <label>Initial Recharge Date:</label>
         <input
           type="number"
