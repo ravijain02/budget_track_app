@@ -18,7 +18,7 @@ export default function AddPlatformForm({ onAdd }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !budget || !rechargeAmount || !rechargeDate || name === "Select Plotforms") {
+    if (!name || !budget || !rechargeDate || name === "Select Plotforms") {
         alert("Please fill all fields");
         return;
     }
